@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block title %}
+REGISTRATION
+{% endblock title %}
+
+{% block content %}
+<h2>REGISTRATION</h2>
+To register please fill the form below:
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name</label>
+    <input name="name" type="text">
+
+    <label for="email">Email</label>
+    <input name="email" type="text">
+
+    <label for="password">Password</label>
+    <input name="password" type="text">
+
+    <input type="submit" value="Register">
+</form>
+
+One time code would be sent to your email to finish the registration.
+
+{% endblock content %}

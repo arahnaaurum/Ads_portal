@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block title %}
+FINISH REGISTRATION
+{% endblock title %}
+
+{% block content %}
+<h2>FINISH REGISTRATION</h2>
+To finish your registration please enter the one time code below:
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="code">CODE</label>
+    <input name="code" type="text">
+
+    <input type="submit" value="Enter">
+</form>
+
+{% endblock content %}

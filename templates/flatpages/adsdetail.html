@@ -1,0 +1,19 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+ADVERTISEMENT DETAILS
+{% endblock title %}
+
+{% block content %}
+   <h2> {{ ads.title }} </h2>
+    <p> Published: {{ ads.time_creation|date:"d M Y"}}{{ads.time_creation|time:"H:i"}} </p>
+    <p> {{ ads.text|safe }} </p>
+
+<a href="{% url 'comment' ads.pk %}"> COMMENT </a>
+<!--при помощи блока if скрываем возможность изменения/удаления объявления для юзеров кроме автора-->
+{% if ads.author.identity == request.user %}
+    <a href="{% url 'ads_edit' ads.pk %}"> EDIT </a>
+    <a href="{% url 'ads_delete' ads.pk %}">DELETE </a>
+{% endif %}
+
+{% endblock content %}

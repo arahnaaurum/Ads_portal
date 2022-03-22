@@ -1,0 +1,35 @@
+{% extends 'flatpages/default.html' %}
+{% load static %}
+
+{% block title %}
+ADVERTISEMENT
+{% endblock title %}
+
+{% block content %}
+
+        {% block greeting %}
+         <h1>ALL YOUR ADS ARE HERE:</h1>
+        {% endblock greeting %}
+
+<main>
+
+<h2>There are {{adslist|length}} ads for you:</h2>
+
+<hr>
+    {% if adslist %}
+            {% for ad in adslist %}
+                <p> {{ ad.title }} </p>
+                <p> {{ ad.time_creation|date:"d M Y" }} </p>
+                <p> {{ ad.text|safe }} </p>
+                <a href="{{ ad.get_absolute_url }}">Read & comment!</a>
+                <hr>
+            {% endfor %}
+    {% else %}
+    <h2>No ads!</h2>
+    {% endif %}
+
+<a href="../ads/create/"><span style="background-color: pink; padding: 5px;"> ADD YOUR AD! </span></a> <br>
+</main>
+
+
+{% endblock content %}

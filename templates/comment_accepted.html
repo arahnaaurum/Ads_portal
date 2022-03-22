@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your reply was accepted</title>
+</head>
+<body>
+    <h1>Dear {{ instance.from_user.username }}!</h1>
+    Your reply to ad {{ instance.to_post }} has been accepted by the author of the ad.
+    <p>You wrote:</p>
+    <p>{{ instance.text }}</p>
+    <p> For more please visit <a href="http://127.0.0.1:8000/ads">our site</a>!</p>
+</body>
+</html>

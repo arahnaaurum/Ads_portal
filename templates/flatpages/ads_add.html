@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+{% load static %}
+
+{% block title %}
+NEW ADVERTISEMENT
+{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <input type="submit" value="ADD">
+</form>
+
+{% endblock content %}
