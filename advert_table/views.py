@@ -69,7 +69,7 @@ class AuthorCreateView (LoginRequiredMixin, View):  #но я сделала сп
 
 
 class CommentList(LoginRequiredMixin, ListView):
-    model  = Comments
+    model = Comments
     template_name = 'flatpages/personal.html'
     context_object_name = 'commentslist'
     queryset = Comments.objects.order_by('-id')

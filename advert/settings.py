@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'pers_acc',
     'django_apscheduler',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'index',
 ]
 
 MIDDLEWARE = [

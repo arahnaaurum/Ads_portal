@@ -22,7 +22,7 @@ def my_job():
     post_list = Post.objects.filter(time_creation__range=[datetime.now() - timedelta(days=7), datetime.now()])
     for user in User.objects.all():
         html_content = render_to_string(
-            'weekly.html',
+            'daily.html',
             {
                 'post_list': post_list,
                 'username': user.username,
